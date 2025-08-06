@@ -23,7 +23,7 @@ async def handle_message(message: Message):
             response = requests.get("https://www.cbr-xml-daily.ru/daily_json.js")
             data = response.json()
             usd = data["Valute"]["USD"]["Value"]
-            await message.answer(f" Курс доллара: {usd:.2f} ₽")
+            await message.answer(f"💵Курс доллара: {usd:.2f} ₽")
         except Exception as e:
             await message.answer("Произошла ошибка при получении данных 😔")
     else:
